@@ -10,10 +10,10 @@
     flex-direction: column; */
     border: solid 1px black;
     border-radius: 10px;
-    width: 80%;
-    margin-left: 185px;
+    width: 70%;
+    margin-left: 280px;
     margin-top: 50px;
-    height: 85vh;
+    height: 20%;
     background-color: cornsilk;
 }
 
@@ -28,7 +28,7 @@
 .form {
     display: flex;
     justify-content: center;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
      
 }
 
@@ -43,13 +43,33 @@ button {
     height: 30px;
     padding: 5px;
     border-radius: 5px;
+    margin-left: 5px;
 }
 
-.board {
+
+.list {
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 li {
-    font-size: 28px;
+    font-size: 25px;
+    font-weight: bold;
+    list-style-type: none;
+    /* border: solid 1px black;
+    border-radius: 10px; */
+    margin-bottom: 5px;
+    
 }
+button.google-login-button {
+    background-color: #dd4b39;
+    color: #fff;
+    border-radius: 2px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
