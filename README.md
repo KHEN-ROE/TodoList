@@ -94,4 +94,5 @@ spring.servlet.multipart.max-file-size=10MB
  
  ## 라이센스
  
- + 이 프로젝트는 [MIT 라이센스](LICENSE) 하에 배포됩니다.
+ + 이 프로젝트는 MIT 라이센스 하에 배포됩니다. [MIT 라이센스 전문](https://opensource.org/licenses/MIT)을 확인하실 수 있습니다.
+
