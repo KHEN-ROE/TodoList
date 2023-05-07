@@ -50,7 +50,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout")) // 로그아웃 URL을 설정
                 .logoutSuccessUrl("http://localhost:3000") // 로그아웃 후 리다이렉트할 URL을 설정
-//                .logoutSuccessUrl("http://mytodolist0.s3-website.ap-northeast-2.amazonaws.com") // 로그아웃 후 리다이렉트할 URL을 설정
                 .invalidateHttpSession(true) // 로그아웃 시 HTTP 세션을 무효화
                 .deleteCookies("JSESSIONID"); // 로그아웃 시 쿠키를 삭제
         http.oauth2ResourceServer()
@@ -63,7 +62,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
       
 //    @Bean
 //    JwtDecoder jwtDecoder() {
-//        SecretKey secretKey = Keys.hmacShaKeyFor("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".getBytes(StandardCharsets.UTF_8));
+//        SecretKey secretKey = Keys.hmacShaKeyFor("".getBytes(StandardCharsets.UTF_8));
 //        final String AUDIENCE = "1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com";
 //
 //        
@@ -81,7 +80,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     
     @Bean
     JwtDecoder jwtDecoder() {
-        SecretKey secretKey = Keys.hmacShaKeyFor("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".getBytes(StandardCharsets.UTF_8));
+        SecretKey secretKey = Keys.hmacShaKeyFor("your_own_key".getBytes(StandardCharsets.UTF_8));
         
         NimbusJwtDecoder jwtDecoder = NimbusJwtDecoder.withSecretKey(secretKey).build();
 
@@ -91,7 +90,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	@Override
             public OAuth2TokenValidatorResult validate(Jwt jwt) {
                 List<String> audList = jwt.getClaim("aud");
-                String expectedAud = "1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com";
+                String expectedAud = "your_own_id";
                 if (audList != null && audList.contains(expectedAud)) {
                     return OAuth2TokenValidatorResult.success();
                 } else {
