@@ -23,11 +23,7 @@ import io.jsonwebtoken.security.Keys;
 public class AuthController {
 
 	@GetMapping("/loginSuccess")
-	public RedirectView loginSuccess(@AuthenticationPrincipal OAuth2User principal) { // defaultSuccessUrl()에서 바로 3000으로
-																						// 리디렉션 할 수 있는데
-																						// 굳이 여기 온 이유는 사용자 정보 로그 찍어보려고.
-																						// 여기서 로그 찍고 다시 리디렉트 시켜줌
-		// 사용자 정보를 처리하거나 필요한 작업을 수행합니다.
+	public RedirectView loginSuccess(@AuthenticationPrincipal OAuth2User principal) { 
 		System.out.println("사용자 정보: " + principal.getAttributes());
 
 		// JWT 생성
@@ -35,15 +31,13 @@ public class AuthController {
 
 		// JWT 디코딩 및 "aud" 클레임 값 출력
 		SecretKey secretKey = Keys
-				.hmacShaKeyFor("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".getBytes(StandardCharsets.UTF_8));
+				.hmacShaKeyFor("your_own_key".getBytes(StandardCharsets.UTF_8));
 		JwtParser parser = Jwts.parserBuilder().setSigningKey(secretKey).build();
 		Jws<Claims> jws = parser.parseClaimsJws(JWT);
 		String audClaim = jws.getBody().get("aud", String.class);
 		System.out.println("Audience claim in the token: " + audClaim);
 
 		RedirectView redirectView = new RedirectView("http://localhost:3000?token=" + JWT);
-//		RedirectView redirectView = new RedirectView("http://mytodolist0.s3-website.ap-northeast-2.amazonaws.com?token=" + JWT);
-//		redirectView.setUrl("http://localhost:3000?token=" + token);
 		return redirectView;
 	}
 
@@ -58,8 +52,8 @@ public class AuthController {
 		Instant expiry = now.plus(1, ChronoUnit.HOURS);
 
 		SecretKey secretKey = Keys
-				.hmacShaKeyFor("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".getBytes(StandardCharsets.UTF_8));
-		final String AUDIENCE = "1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com";
+				.hmacShaKeyFor("your_own_key".getBytes(StandardCharsets.UTF_8));
+		final String AUDIENCE = "your_own_id";
 
 		String jwt = Jwts.builder().setSubject(email)
 				.claim("name", name) 
