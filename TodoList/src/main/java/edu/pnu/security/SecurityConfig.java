@@ -90,7 +90,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         	@Override
             public OAuth2TokenValidatorResult validate(Jwt jwt) {
                 List<String> audList = jwt.getClaim("aud");
-                String expectedAud = "your_own_id";
+                String expectedAud = "your_own_id"; //
                 if (audList != null && audList.contains(expectedAud)) {
                     return OAuth2TokenValidatorResult.success();
                 } else {
