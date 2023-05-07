@@ -63,7 +63,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //    @Bean
 //    JwtDecoder jwtDecoder() {
 //        SecretKey secretKey = Keys.hmacShaKeyFor("".getBytes(StandardCharsets.UTF_8));
-//        final String AUDIENCE = "1050135280688-bgoki6c46rsshsbm68ru5mh075qnhlvn.apps.googleusercontent.com";
+//        final String AUDIENCE = "";
 //
 //        
 //        
