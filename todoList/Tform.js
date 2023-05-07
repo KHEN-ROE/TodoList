@@ -143,8 +143,7 @@ const Tform = () => {
             <input type="text" value={newTodo} onChange={e => setNewTodo(e.target.value)} placeholder='                                                                    Stop Everything, Do Onething' />
             <button type="submit">Add Todo</button>
             {/* 로그아웃 버튼 추가 */}
-            <button onClick={() => { window.location.href = 'http://localhost:8080/logout'; }}>Logout</button>
-            {/* <button onClick={() => { window.location.href = 'Mytodolist-env.eba-f6mpbmvg.ap-southeast-2.elasticbeanstalk.com/logout'; }}>Logout</button> */}
+            <button onClick={() => { window.location.href = 'http://localhost:8080/logout'; }}>Logout</button>  
           </form>
           <div className='list'>
             {todos.map(todo => (
@@ -159,9 +158,7 @@ const Tform = () => {
       ) : (
         // 로그인하지 않은 사용자에게 보이는 컴포넌트
         <div className='logbutton'>
-          <button onClick={() => { window.location.href = 'http://localhost:8080/oauth2/authorization/google'; }}>Login with Google</button>
-          {/* <button onClick={() => { window.location.href = 'Mytodolist-env.eba-f6mpbmvg.ap-southeast-2.elasticbeanstalk.com/oauth2/authorization/google'; }}>Login with Google</button> */}
-          
+          <button onClick={() => { window.location.href = 'http://localhost:8080/oauth2/authorization/google'; }}>Login with Google</button>       
         </div>
       )}
     </div>
