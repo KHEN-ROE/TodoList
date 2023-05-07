@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import edu.pnu.domain.TodoList;
 import edu.pnu.service.TodoListService;
 
-//@CrossOrigin(origins = "http://mytodolist0.s3-website.ap-northeast-2.amazonaws.com")
+
 @CrossOrigin(origins = "http://localhost:3000")
 @RestController
 //@RequestMapping("/api/todos")
