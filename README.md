@@ -99,6 +99,7 @@ spring.servlet.multipart.max-file-size=10MB
 * 이렇게 OAuth 2.0을 이용한 로그인 과정을 통해 사용자는 구글 계정으로 애플리케이션에 로그인할 수 있으며, 클라이언트와 서버 간의 보안성이 향상됩니다.
 ```
 <br />
+
  ## ERD
  <figure align="center">
   <img src="https://github.com/KHEN-ROE/TodoList/blob/main/image/erd.png">
